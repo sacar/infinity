@@ -1,5 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
 import { Link } from "gatsby";
 
 import menus from "../../../data/navigationMenus";
@@ -18,8 +17,5 @@ const Menus = () => (
   </nav>
 );
 
-Menus.propTypes = {
-  isExpanded: PropTypes.bool.isRequired,
-};
 
 export default Menus;

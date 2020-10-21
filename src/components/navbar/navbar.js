@@ -5,7 +5,6 @@ import Brand from "./subcomponents/brand";
 import ToogleButton from './subcomponents/toogleButton'
 import Menus from "./subcomponents/menus"
 import menus from "../../data/navigationMenus";
-import logo from "../../images/logo-inifity.svg";
 import SignUP from "./subcomponents/signUp"
 function NavBar() {
   const [isExpanded, toggleExpansion] = useState(false);
@@ -15,8 +14,8 @@ function NavBar() {
       <div className="fixed w-full shadow-sm bg-white " style={{ zIndex: "1" }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 ">
           <div className="flex justify-between items-center  py-6 lg:justify-start  md:space-x-10 ">
-            <Brand />
-            <ToogleButton toggleExpansion={toggleExpansion}/>
+            <Brand/>
+            <ToogleButton type="open" toggleExpansion={toggleExpansion}/>
             <Menus />
             <SignUP/>
           </div>
@@ -30,17 +29,8 @@ function NavBar() {
             <div className="rounded-lg shadow-xs bg-white divide-y-2 divide-gray-50">
               <div className="pt-5 pb-6 px-5 space-y-6">
                 <div className="flex items-center justify-between">
-                  <div className="flex">
-                    <img
-                      className="h-8 w-auto sm:h-10"
-                      src={logo}
-                      alt="Workflow"
-                    ></img>
-                    <span className="inline-flex items-center justify-center ml-3 text-xl leading-6 font-bold text-gray-700">
-                      INFINITY
-                    </span>
-                  </div>
-                  <div className="-mr-2">
+                  <Brand layout="web"/>
+                  {/* <div className="-mr-2">
                     <button
                       type="button"
                       className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out  "
@@ -61,7 +51,8 @@ function NavBar() {
                         />
                       </svg>
                     </button>
-                  </div>
+                  </div> */}
+                  <ToogleButton type="close" toggleExpansion={toggleExpansion}/>
                 </div>
                 <div>
                   <nav className="grid gap-y-8">
