@@ -2,66 +2,23 @@ import React, { useState } from "react";
 
 // Import Components
 import Brand from "./subcomponents/brand";
-// import ToogleButton from './subcomponents/toogleButton'
-// import Navigation from "./subcomponents/navigation"
+import ToogleButton from './subcomponents/toogleButton'
+import Menus from "./subcomponents/menus"
 import menus from "../../data/navigationMenus";
 import logo from "../../images/logo-inifity.svg";
-
+import SignUP from "./subcomponents/signUp"
 function NavBar() {
   const [isExpanded, toggleExpansion] = useState(false);
-  // const toogleButton = () => {
-  //   console.log("Button clicked")
-  //   toggleExpansion(!isExpanded)
-  // }
+
   return (
     <>
       <div className="fixed w-full shadow-sm bg-white " style={{ zIndex: "1" }}>
         <div className="max-w-6xl mx-auto px-4 sm:px-6 ">
           <div className="flex justify-between items-center  py-6 lg:justify-start  md:space-x-10 ">
             <Brand />
-            <div className="-mr-2 -my-2 lg:hidden">
-              <button
-                type="button"
-                className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out  "
-                onClick={() => toggleExpansion(true)}
-              >
-                <svg
-                  className="h-6 w-6"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M4 6h16M4 12h16M4 18h16"
-                  />
-                </svg>
-              </button>
-            </div>
-            <nav className="hidden pl-2 lg:flex space-x-10">
-              {menus.map((menu) => (
-                <a
-                  key={menu.title}
-                  href={menu.route}
-                  className="text-base leading-6 font-medium text-gray-500 hover:text-gray-900 focus:outline-none focus:text-gray-900 transition duration-150 ease-in-out"
-                >
-                  {menu.title}
-                </a>
-              ))}
-            </nav>
-            <div className="hidden lg:flex items-center justify-end space-x-8 md:flex-1 lg:w-0">
-              <span className="inline-flex rounded-md shadow-sm">
-                <a
-                  href="#"
-                  className="whitespace-no-wrap inline-flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-700 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline active:bg-indigo-700 transition duration-150 ease-in-out "
-                >
-                  Sign Up
-                </a>
-              </span>
-            </div>
+            <ToogleButton toggleExpansion={toggleExpansion}/>
+            <Menus />
+            <SignUP/>
           </div>
         </div>
         <div
