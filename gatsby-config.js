@@ -5,13 +5,21 @@ const fullConfig = resolveConfig(tailwindConfig);
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Starter Tailwind`,
+    title: `INFINITY`,
     description: `Gatsby starter styled with Tailwind`,
     author: `@taylorbryant`,
   },
   plugins: [
     `gatsby-plugin-eslint`,
     `gatsby-plugin-react-helmet`,
+    {
+      resolve: 'gatsby-plugin-sass',
+      options: {
+        postCssPlugins: [
+          require('tailwindcss')(tailwindConfig)
+        ]
+      }
+    },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {

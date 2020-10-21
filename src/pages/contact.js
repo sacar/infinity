@@ -2,7 +2,7 @@ import React from "react";
 
 import Layout from "../components/layout";
 import SEO from "../components/seo";
-
+import Banner from "../components/shared/banner";
 function ContactPage() {
   return (
     <Layout>
@@ -10,68 +10,101 @@ function ContactPage() {
         keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
         title="Contact"
       />
-      <section>
-        <form className="mx-auto md:w-1/2">
-          <p className="mb-8 leading-loose">
-            Here is an example of a form built using the official Tailwind CSS
-            Custom Forms plugin.{` `}
-            <a
-              className="font-bold text-gray-700 no-underline"
-              href="https://github.com/tailwindcss/custom-forms"
-              target="_blank"
-              rel="noopener noreferrer"
+      <section className="mt-12 sm:mt-12 md:mt-6 w-full">
+        <Banner page={"Home / Contact"} />
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-16 max-w-6xl mx-auto py-16 px-6 sm:px-10 md:px-20">
+          <form className="col-span-2">
+            <h1 className="text-indigo-900 text-2xl font-semibold">
+              Get In Touch With Infinity
+            </h1>
+            <p className="mb-8 leading-loose text-gray-700 text-lg">
+              Simply complete the enquiry form and We will respond as soon as we
+              can.
+            </p>
+
+            <label className="block mb-2 text-base font-medium" htmlFor="name">
+              Name
+            </label>
+
+            <input
+              className="w-full mb-6 form-input"
+              id="name"
+              placeholder=""
+              type="text"
+            />
+
+            <label
+              className="block mb-2 text-base font-medium "
+              htmlFor="email"
             >
-              Read the docs
-            </a>
-            .
-          </p>
+              Email
+            </label>
 
-          <label
-            className="block mb-2 text-xs font-bold uppercase"
-            htmlFor="first-name"
-          >
-            First Name
-          </label>
+            <input
+              className="w-full mb-6 form-input"
+              id="email"
+              placeholder=""
+              type="text"
+            />
 
-          <input
-            className="w-full mb-6 form-input"
-            id="first-name"
-            placeholder="Bill"
-            type="text"
-          />
+            <label
+              className="block mb-2 text-base font-medium "
+              htmlFor="subject"
+            >
+              Subject
+            </label>
 
-          <label
-            className="block mb-2 text-xs font-bold uppercase"
-            htmlFor="last-name"
-          >
-            Last Name
-          </label>
+            <input
+              className="w-full mb-6 form-input"
+              id="subject"
+              placeholder=""
+              type="text"
+            />
+            <label
+              className="block mb-2 text-base font-medium "
+              htmlFor="message"
+            >
+              Message
+            </label>
 
-          <input
-            className="w-full mb-6 form-input"
-            id="last-name"
-            placeholder="Murray"
-            type="text"
-          />
+            <textarea
+              className="w-full mb-6 form-textarea"
+              id="message"
+              placeholder=""
+              rows="8"
+            />
 
-          <label
-            className="block mb-2 text-xs font-bold uppercase"
-            htmlFor="message"
-          >
-            Message
-          </label>
-
-          <textarea
-            className="w-full mb-6 form-textarea"
-            id="message"
-            placeholder="Say something..."
-            rows="8"
-          />
-
-          <button className="px-4 py-2 text-sm font-bold text-white bg-gray-700 border-b-4 border-gray-800 rounded hover:border-gray-700 hover:bg-gray-600">
-            Submit
-          </button>
-        </form>
+            <button className="px-4 py-2 text-sm font-bold text-white bg-indigo-700 rounded hover:border-indigo-700 hover:bg-indigo-600">
+              Submit
+            </button>
+          </form>
+          <div className="flex flex-col md:flex-row lg:flex-col justify-start md:justify-between lg:justify-start items-start w-full space-y-8 md:space-y-0 md:space-x-4 lg:space-x-0 lg:space-y-8">
+            <div className="bg-orange-100 p-4">
+              <div className="bg-white rounded  p-6  flex flex-col justify-start items-start space-y-1">
+                <h4 className="text-xl font-medium text-indigo-900 pb-4">Address</h4>
+                <span>Devkota Road, Baneshwor</span>
+                <span>Kathmandu,</span>
+                <span>Nepal</span>
+              </div>
+            </div>
+            <div className="bg-orange-100  p-4">
+              <div className="bg-white rounded p-6 flex flex-col justify-start items-start space-y-1">
+                <h4 className="text-xl font-medium text-indigo-900 pb-4">Address</h4>
+                <span>Devkota Road, Baneshwor</span>
+                <span>Kathmandu,</span>
+                <span>Nepal</span>
+              </div>
+            </div>
+            <div className="bg-orange-100 p-4">
+              <div className="bg-white rounded p-6  flex flex-col justify-start items-start space-y-1">
+                <h4 className="text-xl font-medium text-indigo-900 pb-4">Address</h4>
+                <span>Devkota Road, Baneshwor</span>
+                <span>Kathmandu,</span>
+                <span>Nepal</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </Layout>
   );

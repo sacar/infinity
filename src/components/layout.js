@@ -1,41 +1,55 @@
 import PropTypes from "prop-types";
 import React from "react";
 
-import Header from "./header";
+import NavBar from "./navbar/navbar";
+import menus from "../data/navigationMenus";
+import services from "../data/services"
 
 function Layout({ children }) {
   return (
     <div className="flex flex-col min-h-screen font-sans text-gray-900">
-      <Header />
+      <NavBar />
 
-      <main className="flex-1 w-full max-w-4xl px-4 py-8 mx-auto md:px-8 md:py-16">
-        {children}
-      </main>
+      <main className="flex-1 w-full  pt-8 mx-auto md:pt-16">{children}</main>
 
-      <footer className="bg-blue-700">
-        <nav className="flex justify-between max-w-4xl p-4 mx-auto text-sm md:p-8">
-          <p className="text-white">
-            Created by{` `}
-            <a
-              className="font-bold no-underline"
-              href="https://bryant.io"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Taylor Bryant
-            </a>
-          </p>
-
-          <p>
-            <a
-              className="font-bold text-white no-underline"
-              href="https://github.com/taylorbryant/gatsby-starter-tailwind"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              GitHub
-            </a>
-          </p>
+      <footer className="bg-gray-800">
+        <nav className="  grid grid-cols-1 md:p-20 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl p-4 mx-auto text-sm text-gray-500">
+          <div className="flex flex-col space-y-4">
+            <h1 className="text-xl text-white font-medium pb-4">INFINITY</h1>
+            <p>
+              We strive to help people by providing extraordinary service and
+              expert repairs using only the highest quality parts available.
+            </p>
+            <p>
+              We service all the newest and popular mobile phones, tablets and
+              laptops. natis sed id nisl magna auris et neque sollicitudin
+              ullamcorper fusce molestie felis mi id.Vestibulum venenatis sed id
+              nisl magna suspendisse a mauris.
+            </p>
+          </div>
+          <div className="flex flex-col space-y-4">
+            <h1 className="text-xl text-white font-medium pb-4">CONTACT US</h1>
+            <p>136 Kingston Road SW19 1LY Wimbledon London.</p>
+            <p>
+              Monday - Friday: 9am - 6pm <br></br>
+              Saturday: 9am - 4pm
+              <br></br>
+              Sunday: Appointments only.
+            </p>
+            <p>Office: 0208-543-7088 <br></br>Mobile: 0-778-35-166-93</p>
+          </div>
+          <div className="flex flex-col space-y-4">
+            <h1 className="text-xl text-white font-medium pb-4">PAGES</h1>
+            {menus.map((menu) => (
+              <span key={menu.title}>{menu.title}</span>
+            ))}
+          </div>
+          <div className="flex flex-col space-y-4">
+            <h1 className="text-xl text-white font-medium pb-4">GET A REPAIR STARTED</h1>
+            {services.map((service) => (
+              <span key={service.type}>{service.type}</span>
+            ))}
+          </div>
         </nav>
       </footer>
     </div>
