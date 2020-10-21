@@ -1,26 +1,35 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-const ToogleButton = ({ toogleButton }) => (
+const ToogleButton = ({ toggleExpansion }) => (
   <>
-    <button
-      className="items-center block px-3 py-2 text-black border border-white rounded md:hidden focus:outline-none"
-      onClick={() => toogleButton()}
-    >
-      <svg
-        className="w-5 h-5 fill-current"
-        viewBox="0 0 20 20"
-        xmlns="http://www.w3.org/2000/svg"
+    <div className="-mr-2 -my-2 lg:hidden">
+      <button
+        type="button"
+        className="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:bg-gray-100 focus:text-gray-500 transition duration-150 ease-in-out  "
+        onClick={() => toggleExpansion(true)}
       >
-        <title>Menu</title>
-        <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-      </svg>
-    </button>
+        <svg
+          className="h-6 w-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth={2}
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg>
+      </button>
+    </div>
   </>
 );
 
 ToogleButton.propTypes = {
-  toogleButton: PropTypes.func.isRequired,
+  toggleExpansion: PropTypes.func.isRequired,
 };
 
 export default ToogleButton;
