@@ -1,5 +1,5 @@
 import React from "react";
-import circuit from "../../images/patrick-hendry-A1v0-iH3T5A-unsplash.jpg";
+import circuit from "../../images/circuit.jpg";
 import PropTypes from "prop-types";
 
 const Banner = ({ page }) => (

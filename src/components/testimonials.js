@@ -4,7 +4,7 @@ import avatar from "../images/avatar.png";
 const Testimonials = () => {
   const [reset, setReset] = useState(false);
   return (
-    <>
+    <div className=" py-4 bg-gray-100">
       <div className="max-w-6xl mx-auto my-16 flex flex-col justify-center items-center space-y-8 ">
         <div className="relative inline-flex">
           <div
@@ -107,7 +107,7 @@ const Testimonials = () => {
               <span onClick={() => setReset(!reset)} className="rounded-full w-3 h-3 bg-indigo-500"></span>
             </div>
       </div>
-    </>
+    </div>
   );
 };
 

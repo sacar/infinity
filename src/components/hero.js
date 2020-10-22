@@ -1,5 +1,4 @@
 import React from "react";
-// import heroImage from "../images/shop1.jpg";
 import { graphql, useStaticQuery } from "gatsby";
 import BackgroundImage from "gatsby-background-image";
 
@@ -15,7 +14,7 @@ const Hero = () => {
       }
     }
   `);
-  console.log(data.hero);
+
   return (
     <BackgroundImage
       className="relative bg-cover bg-center"
@@ -24,10 +23,10 @@ const Hero = () => {
     >
       <span className="w-full h-full absolute opacity-75 bg-black"></span>
       <div
-        className="max-w-6xl relative flex items-center justify-center md:justify-start mx-auto p-6"
+        className="max-w-6xl relative flex items-center justify-center lg:justify-start mx-auto p-6"
         style={{ minHeight: "75vh" }}
       >
-        <div className="flex flex-col items-center md:items-start text-center md:text-left md:w-1/2">
+        <div className="flex flex-col items-center lg:items-start text-center lg:text-left md:w-7/12 ">
           <Heading />
           <Subtext />
           <Button />
