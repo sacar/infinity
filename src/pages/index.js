@@ -3,14 +3,14 @@ import React from "react";
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import Testimonials from "../components/testimonials";
-import heroImage from "../images/shop1.jpg";
+// import heroImage from "../images/shop1.jpg";
 import customerSupport from "../images/customer-support.svg";
 import experience from "../images/experience.svg";
 import quality from "../images/quality.svg";
 import guarantee from "../images/guarantee.svg";
 import repair from "../images/shop2.jpg";
 import circuit from "../images/patrick-hendry-A1v0-iH3T5A-unsplash.jpg";
-
+import Hero from "../components/hero"
 import serviceAreas from "../data/services";
 
 function IndexPage() {
@@ -20,51 +20,8 @@ function IndexPage() {
         keywords={[`gatsby`, `tailwind`, `react`, `tailwindcss`]}
         title="Home"
       />
-      <main className=" sm:pt-0  mt-12 sm:mt-12 md:mt-6 w-full ">
-        <div
-          className="relative pt-16 pb-32 flex content-center items-center justify-center"
-          style={{ minHeight: "75vh" }}
-        >
-          <div
-            className="absolute top-0 w-full h-full bg-center bg-cover"
-            style={{ backgroundImage: `url(${heroImage})` }}
-          >
-            <span className="w-full h-full absolute opacity-75 bg-black"></span>
-          </div>
-          <div className="max-w-6xl relative mx-auto">
-            <div className="flex flex-wrap items-center">
-              <div className="w-full lg:w-6/12 px-4 mx-auto text-center">
-                <div className="">
-                  <h1 className="text-indigo-100 font-semibold text-5xl">
-                    Protect Your Devices For Extended Period
-                  </h1>
-                  <p className="mt-4 text-lg text-gray-300">
-                    We provide extended warranty for your devices upto five
-                    years through our{" "}
-                    <span className="text-indigo-800 font-bold tracking-wider">
-                      InfExt
-                    </span>{" "}
-                    program.
-                  </p>
-                  <div className="mt-8 mx-auto space-x-4">
-                    <a
-                      href="#"
-                      className="whitespace-no-wrap inline-flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-800 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline  transition duration-150 ease-in-out "
-                    >
-                      Get Started
-                    </a>
-                    <a
-                      href="/about"
-                      className="whitespace-no-wrap inline-flex items-center justify-center px-4 py-2 border border-transparent text-base leading-6 font-medium rounded-md text-white bg-indigo-800 hover:bg-indigo-500 focus:outline-none focus:border-indigo-700 focus:shadow-outline transition duration-150 ease-in-out "
-                    >
-                      Track your Device
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+      <main className=" sm:pt-0  mt-16 sm:mt-12 md:mt-12 w-full ">
+        <Hero />
         <div className=" max-w-6xl mx-auto pt-16  ">
           <h2 className="text-2xl font-medium text-center text-indigo-700 ">
             {" "}
